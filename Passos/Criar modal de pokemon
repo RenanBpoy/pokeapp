@@ -1,0 +1,22 @@
+# criar componente para detalhes do pokemon
+
+ionic generate component components/pokemonDetail
+
+# importar controlador de modal
+
+import { ModalController } from '@ionic/angular';
+
+# definir input do pokemon
+
+# em app.module.ts, importar o componente
+
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+
+# importar componente na página que for utilizar (1,2 e 3) junto com o modalController
+
+import { ModalController } from '@ionic/angular';
+import { PokemonDetailComponent } from '../components/pokemon-detail/pokemon-detail.component';
+
+# importar o router para redirecionar tela
+
+import { Router } from '@angular/router';
