@@ -12,10 +12,15 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+
 @NgModule({
   declarations: [AppComponent, PokemonDetailComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot()],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot()],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    provideHttpClient(withInterceptorsFromDi()),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
